@@ -145,6 +145,51 @@ python scripts/add_to_chain.py --add ./skills/my-skill --name my-skill
 python scripts/verify_chain.py --chain-dir ./chain
 ```
 
+## 🆕 自动功能（新）
+
+### 自动评估心跳
+
+定期检查 skills 目录，发现新 skill 自动评估：
+
+```bash
+# 添加到 OpenClaw HEARTBEAT.md
+python scripts/auto_evaluate_heartbeat.py
+```
+
+**功能：**
+- 扫描 `~/.openclaw/skills` 目录
+- 发现新 skill 自动评估并生成报告
+- 检测已有 skill 的变更
+- 建议用户是否加密/签名
+
+### 运行时签名验证
+
+Skill 加载时自动检查签名：
+
+```bash
+# 验证特定 skill
+python scripts/runtime_verifier.py my-skill
+
+# 验证所有 skills
+python scripts/runtime_verifier.py --all
+```
+
+**返回结果：**
+- ✅ 签名有效
+- ⚠️ 有签名但内容已变更
+- ❌ 无签名
+
+### CI/CD 集成
+
+GitHub Actions 自动验证：
+
+```yaml
+# .github/workflows/verify-chain.yml
+- 每次 push 自动验证链完整性
+- 每天凌晨自动运行
+- 验证所有 skill 签名
+```
+
 ## 加密说明
 
 **加密算法**: AES-256-CBC
@@ -162,6 +207,8 @@ python scripts/verify_chain.py --chain-dir ./chain
 skill-creator/
 ├── SKILL.md                    # 本文件（给 OpenClaw Agent 读）
 ├── README.md                   # 项目介绍（给用户读）
+├── README_EN.md               # 英文版项目介绍
+├── HEARTBEAT.md               # 自动评估心跳配置
 ├── DEVELOPER_GUIDE.md          # 完整使用手册
 ├── PRINCIPLE.md                # 原理说明
 ├── requirements.txt            # Python 依赖
@@ -172,7 +219,12 @@ skill-creator/
 │   ├── evaluate_skill.py      # 评估 + 签名
 │   ├── package_skill.py       # 打包脚本
 │   ├── add_to_chain.py        # 本地哈希链管理
-│   └── verify_chain.py        # 链完整性验证
+│   ├── verify_chain.py        # 链完整性验证
+│   ├── auto_evaluate_heartbeat.py  # 🆕 自动评估心跳
+│   └── runtime_verifier.py    # 🆕 运行时签名验证
+├── .github/
+│   └── workflows/
+│       └── verify-chain.yml   # 🆕 CI/CD 自动验证
 └── chain/
     ├── ledger.json            # 本地哈希链记录
     └── index.html             # 链浏览器

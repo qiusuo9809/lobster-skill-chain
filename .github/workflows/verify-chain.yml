@@ -1,0 +1,51 @@
+name: 🦞 Lobster Chain Verification
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  schedule:
+    # 每天凌晨 3 点自动运行
+    - cron: '0 3 * * *'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Verify Hash Chain
+      run: |
+        echo "🦞 Verifying Lobster Skill Chain..."
+        python scripts/verify_chain.py --chain-dir ./chain
+    
+    - name: Verify All Skills
+      run: |
+        echo "🦞 Verifying all skill signatures..."
+        python scripts/runtime_verifier.py --all
+    
+    - name: Check for Unsigned Skills
+      run: |
+        echo "🦞 Checking for unsigned skills..."
+        python scripts/auto_evaluate_heartbeat.py || true
+    
+    - name: Upload verification report
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: verification-report
+        path: |
+          chain/ledger.json
+          *.log
