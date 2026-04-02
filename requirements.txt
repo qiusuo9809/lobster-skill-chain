@@ -1,0 +1,19 @@
+# 🦞 龙虾 Skill 认证系统 - 依赖清单
+
+# 核心依赖
+cryptography>=3.0.0    # AES-256 加密
+
+# Python 版本要求
+# Python 3.6+
+
+# 标准库依赖（无需安装）
+# - hashlib (SHA256)
+# - json
+# - os
+# - sys
+# - argparse
+# - pathlib
+# - re
+# - datetime
+# - base64
+# - subprocess

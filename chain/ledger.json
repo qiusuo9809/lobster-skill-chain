@@ -1,0 +1,73 @@
+{
+  "chain_name": "🦞 龙虾 Skill 链",
+  "genesis_block": {
+    "block_id": 0,
+    "timestamp": "2026-04-01T11:20:00+08:00",
+    "skill_name": "skill-creator",
+    "skill_path": "skills/skill-creator",
+    "hash": "sha256:genesis_xia_mi_2026",
+    "xia_mi_signature": {
+      "emoji": "🦞",
+      "name": "虾米酱",
+      "status": "certified"
+    },
+    "evaluation": {
+      "commercial_value": 95,
+      "uniqueness": 90,
+      "theft_risk": 85,
+      "author_wish": 100,
+      "overall_score": 92.5
+    },
+    "previous_hash": "0"
+  },
+  "blocks": [
+    {
+      "block_id": 0,
+      "timestamp": "2026-04-01T11:20:00+08:00",
+      "skill_name": "skill-creator",
+      "skill_path": "skills/skill-creator",
+      "hash": "sha256:genesis_xia_mi_2026",
+      "xia_mi_signature": {
+        "emoji": "🦞",
+        "name": "虾米酱",
+        "status": "certified"
+      },
+      "evaluation": {
+        "commercial_value": 95,
+        "uniqueness": 90,
+        "theft_risk": 85,
+        "author_wish": 100,
+        "overall_score": 92.5
+      },
+      "previous_hash": "0"
+    },
+    {
+      "block_id": 1,
+      "timestamp": "2026-04-01T14:47:50+08:00",
+      "skill_name": "test-encrypt-skill",
+      "skill_path": "skills/test-encrypt-skill",
+      "hash": "sha256:0fa73509711c2909",
+      "xia_mi_signature": {
+        "emoji": "🦞",
+        "name": "虾米酱",
+        "status": "certified"
+      },
+      "evaluation": {
+        "commercial_value": 80,
+        "uniqueness": 75,
+        "theft_risk": 90,
+        "author_wish": 50,
+        "overall_score": 75.2
+      },
+      "previous_hash": "sha256:genesis_xia_mi_2026"
+    }
+  ],
+  "stats": {
+    "total_blocks": 2,
+    "total_skills": 2,
+    "certified_skills": 2,
+    "pending_skills": 0,
+    "average_score": 83.85,
+    "last_update": "2026-04-01T14:47:50+08:00"
+  }
+}
