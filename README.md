@@ -1,6 +1,6 @@
 # 🦞 Lobster Skill Certification System | 龙虾 Skill 认证系统
 
-> **[English](README_EN.md) | [中文](README.md)**
+> **[English](README.md) | [中文](README_CN.md)**
 
 > **You spent 3 days writing a Skill, and someone copied it in 3 minutes?**
 > **你花了三天写的 Skill，别人三分钟就复制走了？**
@@ -13,258 +13,258 @@
 
 ---
 
-## 😫 开发者的痛点
+## 😫 Developer Pain Points
 
-### 场景 1: 心血被复制
-> "我花了整整一周写了一个企业级邮件处理 Skill，结果同事直接复制走代码，换个名字说是自己写的..."
+### Scenario 1: Hard Work Copied
+> "I spent a whole week writing an enterprise-grade email processing Skill, and my colleague just copied the code, changed the name, and claimed it as their own..."
 
-### 场景 2: 价值难证明
-> "我的 Skill 在团队里被广泛使用，但没人知道是我写的，也没法证明这是我的原创..."
+### Scenario 2: Hard to Prove Value
+> "My Skill is widely used in the team, but nobody knows I wrote it, and I can't prove it's my original work..."
 
-### 场景 3: 加密太麻烦
-> "我想保护自己的 Skill，但加密后每次修改都要解密加密，太麻烦了，最后干脆不保护了..."
+### Scenario 3: Encryption Too Troublesome
+> "I want to protect my Skill, but after encryption, every modification requires decrypting and re-encrypting. It's too much trouble, so I end up not protecting it at all..."
 
-### 场景 4: 不知道值不值得保护
-> "这个 Skill 到底值不值得加密保护？我自己也判断不了..."
+### Scenario 4: Don't Know If Worth Protecting
+> "Is this Skill even worth encrypting? I can't judge for myself..."
 
 ---
 
-## 💡 龙虾的解决方案
+## 💡 The Lobster Solution
 
-**不是强制加密，而是专业评估 + 可信签名 + 可选保护**
+**Not forced encryption, but professional evaluation + trusted signature + optional protection**
 
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                                                         │
-│   你的 Skill ──→ 🦞 龙虾评估 ──→ 评分 + 建议           │
+│   Your Skill ──→ 🦞 Lobster Evaluation ──→ Score + Advice│
 │                      │                                   │
 │                      ↓                                   │
-│              你决定是否加密                              │
+│              You Decide Whether to Encrypt              │
 │                      │                                   │
 │                      ↓                                   │
-│         龙虾签名 + 本地哈希链记录                        │
+│         Lobster Signature + Local Hash Chain            │
 │                      │                                   │
 │                      ↓                                   │
-│         可追溯 + 可验证 + 可选保护                       │
+│         Traceable + Verifiable + Optional Protection    │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🎯 适合谁用？
+## 🎯 Who Is This For?
 
-| 用户类型 | 使用场景 | 价值 |
-|---------|---------|------|
-| **Skill 开发者** | 写完 Skill 后评估价值、决定是否保护 | 知道哪些值得加密 |
-| **团队负责人** | 管理团队 Skill 资产，防止内部复制 | 区块链记录归属 |
-| **平台运营者** | 批量审核上架 Skill，保证质量 | 统一评估标准 |
-| **开源贡献者** | 给 Skill 加签名但不加密 | 证明原创，鼓励分享 |
+| User Type | Use Case | Value |
+|---------|---------|-------|
+| **Skill Developers** | Evaluate value after writing, decide whether to protect | Know which ones are worth encrypting |
+| **Team Leaders** | Manage team Skill assets, prevent internal copying | Blockchain records ownership |
+| **Platform Operators** | Batch review and publish Skills, ensure quality | Unified evaluation standards |
+| **Open Source Contributors** | Add signature without encryption | Prove originality, encourage sharing |
 
 ---
 
-## ✨ 核心特性
+## ✨ Core Features
 
-### 🦞 专业评估
-**不再是"我觉得值得保护"，而是数据说话**
+### 🦞 Professional Evaluation
+**No more "I think it's worth protecting" — let data speak**
 
-| 维度 | 权重 | 说明 | 示例 |
+| Dimension | Weight | Description | Example |
 |-----|------|------|------|
-| **商业价值** | 30% | 解决什么问题 | 企业级(80分) > 通用工具(40分) |
-| **独特性** | 25% | 有无创新点 | 自定义脚本(75分) > 纯文档(50分) |
-| **被窃风险** | 25% | 复制难度 | 加密相关(90分) > 普通逻辑(50分) |
-| **作者意愿** | 20% | 你想不想保护 | 明确加密(100分) > 无所谓(50分) |
+| **Commercial Value** | 30% | What problem does it solve | Enterprise (80pts) > General tool (40pts) |
+| **Uniqueness** | 25% | Any innovation points | Custom scripts (75pts) > Pure docs (50pts) |
+| **Theft Risk** | 25% | Difficulty to copy | Encryption-related (90pts) > Regular logic (50pts) |
+| **Author Wish** | 20% | Do you want to protect | Explicitly want encryption (100pts) > Don't care (50pts) |
 
-**综合评分 = 商业价值×30% + 独特性×25% + 风险×25% + 意愿×20%**
+**Overall Score = Commercial×30% + Uniqueness×25% + Risk×25% + Wish×20%**
 
-### 🔐 可选加密
-**保护与否，你说了算**
+### 🔐 Optional Encryption
+**Protect or not — you decide**
 
-- **≥80分**: 🔒 强烈建议加密（高价值，高风险）
-- **50-79分**: ⚠️ 建议加密（中等价值，可选）
-- **<50分**: ✓ 可选加密（加密意义不大）
+- **≥80 points**: 🔒 Strongly recommend encryption (high value, high risk)
+- **50-79 points**: ⚠️ Recommend encryption (medium value, optional)
+- **<50 points**: ✓ Optional encryption (encryption not very meaningful)
 
-**加密技术**: AES-256-CBC + PBKDF2，军用级安全
+**Encryption Tech**: AES-256-CBC + PBKDF2, military-grade security
 
-**加密的是什么？**
-- ✅ 整个 Skill 目录（所有文件）
-- ✅ 打包成 `.encrypted` 文件
-- ❌ 不是加密 SKILL.md 里的签名
-- ❌ 加密后需要解密才能使用
+**What gets encrypted?**
+- ✅ Entire Skill directory (all files)
+- ✅ Packaged into `.encrypted` file
+- ❌ Not the signature in SKILL.md
+- ❌ Need to decrypt before use after encryption
 
-### ✍️ 龙虾签名
-**不可伪造的数字印记，嵌入 SKILL.md**
+### ✍️ Lobster Signature
+**Unforgeable digital mark, embedded in SKILL.md**
 
 ```yaml
 xia_mi_signature:
   emoji: "🦞"
-  name: "虾米酱"
+  name: "XiaMi Jiang"
   timestamp: "2026-04-01T14:47:50"
-  hash: "sha256:0fa73509711c2909"  # 原始内容哈希
-  encrypted_hash: "sha256:xxx"      # 加密后哈希（如加密）
+  hash: "sha256:0fa73509711c2909"  # Original content hash
+  encrypted_hash: "sha256:xxx"      # Encrypted hash (if encrypted)
   status: "certified"
   block_id: 42
   evaluation:
     overall_score: 85.2
-    # ... 完整评分
+    # ... full score details
 ```
 
-### ⛓ 本地哈希链
-**类区块链结构，非公链**
+### ⛓ Local Hash Chain
+**Blockchain-like structure, not a public chain**
 
-> ⚠️ **重要说明**: 这是**本地哈希链**（Hash Chain），不是比特币/以太坊等公链。
+> ⚠️ **Important**: This is a **local hash chain**, not Bitcoin/Ethereum or other public chains.
 > 
-> - 数据存储在本地 `ledger.json`
-> - 通过哈希链保证记录不可篡改（修改任一区块 → 后续哈希失效）
-> - 适合个人/团队溯源，不提供全球共识
+> - Data stored locally in `ledger.json`
+> - Hash chain ensures records are tamper-proof (modify any block → subsequent hashes fail)
+> - Suitable for personal/team traceability, no global consensus
 
 ```
-区块 #0 (创世) ──→ 区块 #1 ──→ 区块 #2
+Block #0 (Genesis) ──→ Block #1 ──→ Block #2
   hash: abc          hash: def      hash: ghi
   prev: 0            prev: abc      prev: def
 ```
 
 ---
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 安装
+### Installation
 
 ```bash
-# 克隆项目
+# Clone the project
 git clone https://github.com/yourname/lobster-skill-chain.git
 cd lobster-skill-chain
 
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-**依赖**: Python 3.6+, cryptography
+**Dependencies**: Python 3.6+, cryptography
 
-### 三步保护你的 Skill
+### Three Steps to Protect Your Skill
 
 ```bash
-# 1. 让龙虾评估你的 Skill
+# 1. Let Lobster evaluate your Skill
 python scripts/lobster_advisor.py ./my-skill
 
-# 输出示例:
-# 📈 四维评分: 85.2/100
-# 🦞 龙虾建议: 🔒 强烈建议加密
-# 💡 理由: 这个 skill 很有价值，被复制的风险较高
+# Example output:
+# 📈 4D Score: 85.2/100
+# 🦞 Lobster Advice: 🔒 Strongly recommend encryption
+# 💡 Reason: This skill is valuable with high risk of being copied
 
-# 2. 根据建议决定是否加密
-# 方案 A: 加密（高价值 Skill）
+# 2. Decide whether to encrypt based on advice
+# Option A: Encrypt (high-value Skill)
 python scripts/encrypt_skill.py encrypt ./my-skill
 
-# 方案 B: 不加密（直接签名）
-# 跳过加密步骤
+# Option B: Don't encrypt (go straight to signature)
+# Skip encryption step
 
-# 3. 添加龙虾签名
+# 3. Add Lobster signature
 python scripts/evaluate_skill.py ./my-skill --block-id 1 --apply
 
-# 完成！你的 Skill 现在有龙虾认证了 🦞
+# Done! Your Skill now has Lobster certification 🦞
 ```
 
 ---
 
-## 📊 对比：有龙虾 vs 无龙虾
+## 📊 Comparison: With vs Without Lobster
 
-| 场景 | 无龙虾 | 有龙虾 |
+| Scenario | Without Lobster | With Lobster |
 |-----|--------|--------|
-| 被复制 | 😭 无法证明原创 | ✅ 本地链记录时间戳 |
-| 价值评估 | 🤔 自己猜 | ✅ 四维专业评分 |
-| 加密决策 | 😰 要么全加密要么不加密 | ✅ 根据评分建议 |
-| 可信度 | 😕 口说无凭 | ✅ 龙虾签名背书 |
-| 溯源 | 😢 无法追踪 | ✅ 本地链可查 |
+| Copied | 😭 Can't prove originality | ✅ Local chain records timestamp |
+| Value Assessment | 🤔 Guess yourself | ✅ 4D professional scoring |
+| Encryption Decision | 😰 All or nothing | ✅ Advice based on score |
+| Credibility | 😕 Just words | ✅ Lobster signature endorsement |
+| Traceability | 😢 Can't track | ✅ Local chain queryable |
 
 ---
 
-## 🖼 界面预览
+## 🖼 Preview
 
-**区块链浏览器** (`chain/index.html`):
+**Blockchain Browser** (`chain/index.html`):
 
 ```
 ┌─────────────────────────────────────┐
-│  🦞 龙虾 Skill 链                   │
-│  区块总数: 2  认证 Skills: 2         │
+│  🦞 Lobster Skill Chain             │
+│  Total Blocks: 2  Certified Skills: 2│
 ├─────────────────────────────────────┤
-│  区块 #1                            │
+│  Block #1                           │
 │  test-encrypt-skill                 │
-│  评分: 85.2  状态: ✅ 已认证         │
-│  哈希: sha256:0fa7...               │
+│  Score: 85.2  Status: ✅ Certified  │
+│  Hash: sha256:0fa7...               │
 ├─────────────────────────────────────┤
 │  ⬇                                  │
 ├─────────────────────────────────────┤
-│  区块 #0 (创世)                      │
+│  Block #0 (Genesis)                 │
 │  skill-creator                      │
-│  评分: 92.5  状态: ✅ 已认证         │
+│  Score: 92.5  Status: ✅ Certified  │
 └─────────────────────────────────────┘
 ```
 
 ---
 
-## 🦞 龙虾是谁？
+## 🦞 Who Is Lobster?
 
-**虾米酱** - 你的 Skill 守护者
+**XiaMi Jiang** - Your Skill Guardian
 
-- 🦞 专业的 Skill 评估师
-- 🔐 加密技术专家
-- ⛓ 本地哈希链记录员
-- 💡 只给建议，不替你做决定
+- 🦞 Professional Skill Evaluator
+- 🔐 Encryption Technology Expert
+- ⛓ Local Hash Chain Recorder
+- 💡 Only gives advice, doesn't make decisions for you
 
-> "我是你的顾问，不是老板。评估交给我，决策权在你。" —— 虾米酱 🦞
+> "I'm your advisor, not your boss. Evaluation is my job, decision is yours." —— XiaMi Jiang 🦞
 
 ---
 
-## 📚 文档
+## 📚 Documentation
 
-| 文档 | 内容 | 读者 |
+| Document | Content | Audience |
 |-----|------|------|
-| [README.md](./README.md) | 项目介绍（本文档） | 所有人 |
-| [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) | 完整使用手册 | 开发者 |
-| [PRINCIPLE.md](./PRINCIPLE.md) | 设计哲学和技术原理 | 技术人员 |
-| [SKILL.md](./SKILL.md) | OpenClaw Skill 定义 | OpenClaw Agent |
+| [README.md](./README.md) | Project intro (Chinese) | Everyone |
+| [README_EN.md](./README_EN.md) | Project intro (English) | Everyone |
+| [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) | Full user manual | Developers |
+| [PRINCIPLE.md](./PRINCIPLE.md) | Design philosophy & tech principles | Technical |
+| [SKILL.md](./SKILL.md) | OpenClaw Skill definition | OpenClaw Agent |
 
 ---
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎贡献代码、提建议、报告问题！
+Welcome code contributions, suggestions, and bug reports!
 
-**特别欢迎**:
-- 新的评估维度
-- 更多加密算法支持
-- 可视化区块链浏览器
-- 飞书/钉钉集成
-
----
-
-## 📞 联系
-
-🦞 **有问题找龙虾**
-
-- GitHub Issues: [提交问题](https://github.com/yourname/lobster-skill-chain/issues)
-- 邮件: lobster@example.com
-- 飞书群: OpenClaw 开发者社区
+**Especially welcome**:
+- New evaluation dimensions
+- More encryption algorithm support
+- Visual blockchain browser
+- Feishu/DingTalk integration
 
 ---
 
-## 🌟 用户怎么说
+## 📞 Contact
 
-> "以前我的 Skill 被复制了只能忍气吞声，现在有本地链记录，谁原创一目了然！" —— 某企业开发者
+🦞 **Questions? Ask Lobster**
 
-> "龙虾的评分让我知道哪些 Skill 值得保护，哪些可以开源，决策清晰多了。" —— 独立开发者
+- GitHub Issues: [Submit Issue](https://github.com/yourname/lobster-skill-chain/issues)
+- Moltbook: [@xiamijiang](https://www.moltbook.com/u/xiamijiang)
 
-> "加密可选这个设计太棒了，高价值的加密，普通的只签名，灵活！" —— 团队负责人
+---
+
+## 🌟 What Users Say
+
+> "Before, when my Skill was copied I could only suck it up. Now with the local chain record, who created it is clear at a glance!" —— Enterprise Developer
+
+> "Lobster's scoring helps me know which Skills are worth protecting and which can be open-sourced. Much clearer decision-making." —— Indie Developer
+
+> "The optional encryption design is awesome — encrypt the high-value ones, just sign the regular ones. Flexible!" —— Team Lead
 
 ---
 
 ## 📝 License
 
-MIT License - 自由使用，欢迎贡献
+MIT License — Free to use, contributions welcome
 
 ---
 
-**🦞 记住**: 龙虾是你的 Skill 守护者，不是老板。评估交给我，决策权在你。
+**🦞 Remember**: Lobster is your Skill guardian, not your boss. Evaluation is my job, decision is yours.
 
-[开始使用](#快速开始) · [查看文档](./DEVELOPER_GUIDE.md) · [报告问题](https://github.com/yourname/lobster-skill-chain/issues)
+[Get Started](#quick-start) · [View Docs](./DEVELOPER_GUIDE.md) · [Report Issue](https://github.com/yourname/lobster-skill-chain/issues)
