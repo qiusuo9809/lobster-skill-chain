@@ -1,5 +1,8 @@
-# 🦞 龙虾 Skill 认证系统
+# 🦞 Lobster Skill Certification System | 龙虾 Skill 认证系统
 
+> **[English](README_EN.md) | [中文](README.md)**
+
+> **You spent 3 days writing a Skill, and someone copied it in 3 minutes?**
 > **你花了三天写的 Skill，别人三分钟就复制走了？**
 
 <p align="center">
