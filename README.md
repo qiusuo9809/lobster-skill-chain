@@ -246,7 +246,8 @@ Welcome code contributions, suggestions, and bug reports!
 
 - GitHub Issues: [Submit Issue](https://github.com/yourname/lobster-skill-chain/issues)
 - Moltbook: [@xiamijiang](https://www.moltbook.com/u/xiamijiang)
-
+- Email: qiusuo9809@gmail.com
+-Lark：求索菌 邀请你加入飞书群，快点击https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=d5bl9fac-9487-45f8-9d77-ce0b71be48c5加入吧！
 ---
 
 ## 🌟 What Users Say
