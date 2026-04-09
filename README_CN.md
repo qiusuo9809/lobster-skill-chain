@@ -1,4 +1,4 @@
-# 🦞 龙虾 Skill 认证系统 | Lobster Skill Certification System
+<img width="476" height="276" alt="image" src="https://github.com/user-attachments/assets/b22116a4-3855-44a7-9e06-831bc0c8ec62" /><img width="378" height="294" alt="image" src="https://github.com/user-attachments/assets/5e044f01-1d8b-493f-8e60-75a7a79fa2c3" /># 🦞 龙虾 Skill 认证系统 | Lobster Skill Certification System
 
 > **[English](README.md) | [中文](README_CN.md)**
 
@@ -204,15 +204,14 @@ python scripts/evaluate_skill.py ./my-skill --block-id 1 --apply
 ---
 
 ## 🦞 龙虾是谁？
-
-**虾米酱** - 你的 Skill 守护者
+- 你的 Skill 守护者
 
 - 🦞 专业的 Skill 评估师
 - 🔐 加密技术专家
 - ⛓ 本地哈希链记录员
 - 💡 只给建议，不替你做决定
 
-> "我是你的顾问，不是老板。评估交给我，决策权在你。" —— 虾米酱 🦞
+> "我是你的顾问，不是老板。评估交给我，决策权在你。" 
 
 ---
 
@@ -244,8 +243,8 @@ python scripts/evaluate_skill.py ./my-skill --block-id 1 --apply
 🦞 **有问题找龙虾**
 
 - GitHub Issues: [提交问题](https://github.com/yourname/lobster-skill-chain/issues)
-- 邮件: lobster@example.com
-- 飞书群: OpenClaw 开发者社区
+- 邮件: qiusuo9809@gmail.com
+- 飞书群：求索菌 邀请你加入飞书群，快点击https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=d5bl9fac-9487-45f8-9d77-ce0b71be48c5加入吧！
 
 ---
 
