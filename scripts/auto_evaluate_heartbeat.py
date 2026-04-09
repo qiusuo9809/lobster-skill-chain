@@ -16,13 +16,20 @@ from datetime import datetime
 sys.path.insert(0, str(Path(__file__).parent))
 
 def get_skill_hash(skill_path):
-    """计算 skill 目录的哈希"""
+    """计算 skill 目录的哈希（安全检查：防止符号链接遍历）"""
     hasher = hashlib.sha256()
-    skill_path = Path(skill_path)
+    skill_path = Path(skill_path).resolve()
     
     for file in sorted(skill_path.rglob('*')):
         if file.is_file():
-            hasher.update(file.read_bytes())
+            try:
+                # 安全检查：解析符号链接，确保目标在 skill 目录内
+                file_resolved = file.resolve()
+                if not str(file_resolved).startswith(str(skill_path)):
+                    continue  # 跳过越界文件
+                hasher.update(file.read_bytes())
+            except (OSError, ValueError):
+                continue  # 跳过可疑文件
     
     return hasher.hexdigest()[:16]
 
@@ -59,8 +66,24 @@ def save_state(state, state_file):
 def evaluate_skill(skill_path):
     """评估 skill（简化版，调用完整评估）"""
     import subprocess
+    import hashlib
+    
+    # 安全检查：验证 lobster_advisor.py 的完整性
+    advisor_path = Path(__file__).parent / 'lobster_advisor.py'
+    if not advisor_path.exists():
+        return None, "评估脚本不存在", ""
+    
+    # 计算脚本的哈希值进行基本验证
+    advisor_hash = hashlib.sha256(advisor_path.read_bytes()).hexdigest()[:16]
+    expected_hash = None  # 可以在这里设置预期的哈希值
+    
+    # 如果设置了预期哈希，进行验证
+    if expected_hash and advisor_hash != expected_hash:
+        print(f"⚠️  警告: 评估脚本哈希不匹配 (当前: {advisor_hash})")
+        return None, "评估脚本验证失败", ""
+    
     result = subprocess.run(
-        ['python3', 'scripts/lobster_advisor.py', skill_path],
+        ['python3', str(advisor_path), skill_path],
         capture_output=True,
         text=True,
         cwd=str(Path(__file__).parent.parent)

@@ -104,12 +104,25 @@ def encrypt_skill(skill_path: Path, password: str = None, output_path: Path = No
     key, salt = generate_key(password)
     f = Fernet(key)
     
-    # 收集所有文件
+    # 收集所有文件（安全检查：解析符号链接，确保不越界）
     files_data = {}
+    skill_path_resolved = skill_path.resolve()
+    
     for file_path in skill_path.rglob("*"):
         if file_path.is_file():
-            rel_path = str(file_path.relative_to(skill_path))
-            files_data[rel_path] = file_path.read_bytes()
+            # 安全检查：解析符号链接，确保目标在 skill 目录内
+            try:
+                file_resolved = file_path.resolve()
+                # 确保解析后的路径仍在 skill 目录内
+                if not str(file_resolved).startswith(str(skill_path_resolved)):
+                    print(f"⚠️  跳过越界文件: {file_path} -> {file_resolved}")
+                    continue
+                
+                rel_path = str(file_path.relative_to(skill_path))
+                files_data[rel_path] = file_path.read_bytes()
+            except (OSError, ValueError) as e:
+                print(f"⚠️  跳过可疑文件: {file_path} ({e})")
+                continue
     
     # 打包并加密
     package = {

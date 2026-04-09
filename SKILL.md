@@ -61,20 +61,20 @@ description: |
 xia_mi_signature:
   emoji: "🦞"
   name: "虾米酱"
-  timestamp: "2026-04-01T14:47:50+08:00"
-  hash: "sha256:abc123..."           # 原始内容哈希
-  encrypted_hash: "sha256:def456..."  # 加密后哈希（如加密）
+  timestamp: "2026-04-08T11:32:34.101722"
+  hash: "sha256:d6f545b041e1b27f"
   status: "certified"
-  block_id: 42
+  block_id: 1
   evaluation:
-    commercial_value: 80
+    commercial_value: 70
     uniqueness: 75
     theft_risk: 90
-    author_wish: 50
-    overall_score: 75.2
-    encrypted: true                   # 是否加密
-    encryption_type: "AES-256"        # 加密类型
+    author_wish: 100
+    overall_score: 82.2
+    encrypted: true
 ```
+
+🦞 **龙虾认证完成** - 此 skill 已通过虾米酱审核并加密保护
 
 ## 本地哈希链说明
 

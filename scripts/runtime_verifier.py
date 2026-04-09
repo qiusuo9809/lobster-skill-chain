@@ -30,6 +30,8 @@ def extract_signature(skill_md_path):
     # 解析 YAML
     try:
         signature_yaml = 'xia_mi_signature:\n' + match.group(1)
+        # 移除 emoji 避免 YAML 解析错误
+        signature_yaml = signature_yaml.replace('🦞', ':lobster:')
         data = yaml.safe_load(signature_yaml)
         return data.get('xia_mi_signature')
     except:
